@@ -1,0 +1,25 @@
+.logo{
+    
+    width: 300px;
+}
+
+.parallax-container {
+    height: 800px;
+}
+
+/*Wide card with share menu button*/
+.demo-card-wide.mdl-card {
+    width: 812px;
+}
+
+.demo-card-wide>.mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('assets/images/ParkSpot.png') center / cover;
+    padding: 10px;
+}
+
+.demo-card-wide>.mdl-card__menu {
+    color: #fff;
+}
+
