@@ -1,17 +1,28 @@
-<<<<<<< HEAD
-// api_key=AIzaSyCXL4u3hi_MnkgjpFEfkJAC5XlJ25Tx-gE
-function getGoogle() {
-    var queryURL = "https://maps.googleapis.com/maps/api/directions/json?origin=3604+Riverchase+Court,+Richmond,VA&destination=University+of+Richmond&key=AIzaSyCXL4u3hi_MnkgjpFEfkJAC5XlJ25Tx-gE"
-    $.ajax( {
-        url: queryURL,
-        method: "GET"
-      }).then(function(response) { 
-          var directions = response.data;
-          console.log(directions);
-});
-}
+var mapObj = (function () {
+    'use strict';
 
-getGoogle();
-=======
-var api_key = "AIzaSyCXL4u3hi_MnkgjpFEfkJAC5XlJ25Tx-gE";
->>>>>>> 84ade1eb75946f725ef6a51a1a0c429a7349716c
+    var key = "AIzaSyALBb2T9zVdON6ALjVFDElA4YZMl00BcOs";
+    var originParam = "?origin=";
+    var keyParam = "&key=";
+    var destinationParam = "&destination=";
+    var baseUrl = "https://maps.googleapis.com/maps/api/directions/json";
+    var url = null;
+
+    function buildUrl(origin, destination) {
+        url = baseUrl + originParam + origin + destinationParam + destination + keyParam + key;
+        return url;
+    }
+
+    return {
+        getDirections: function (origin, destination) {
+            var myRequestUrl = buildUrl(origin, destination);
+            
+            var promise = $.ajax(myRequestUrl, function (response) {
+                console.log(myRequestUrl);
+                console.log(response);
+            });
+
+            return promise;
+        }
+    };
+})();

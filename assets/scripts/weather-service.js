@@ -12,6 +12,10 @@ var weatherService = (function ($) {
             });
 
             return promise;
+        },
+
+        getFutureWeatherForArea: function (areaString, futureDate) {
+            
         }
     };
 })($);
