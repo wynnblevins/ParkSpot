@@ -1,20 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<!-- Compiled and minified CSS -->
+
+<link rel="stylesheet" href="assets/style/style.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <title>ParkSpot</title>
 </head>
+
 <body>
-    <div id="textBoxWrappers">
-        <input type="text" id="originTextBox">
-        <input type="text" id="destinationTextBox">
+
+    <nav>
+        <div class="nav-wrapper black">
+            <a href="#" class="brand-logo center"> <img class="logo" src="assets/images/Logo.png" alt=""> </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>
+                    <a href="sass.html">Sass</a>
+                </li>
+                <li>
+                    <a href="badges.html">Components</a>
+                </li>
+                <li>
+                    <a href="collapsible.html">JavaScript</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+<div class="parallax-container">
+    <div class="parallax">
+        <img class="imag" src="assets/images/grass.jpg">
     </div>
-    <button id="directionsButton" type="button">Get Directions</button>
-    <div id="directionsWrapper">
-        <!--directions get appended here-->
+</div>
+<div class="section white">
+    <div class="row container">
+        
+    
+        
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">home</i>
+                    <input id="icon_telephone" type="text" class="validate">
+                    <label for="icon_telephone">Address</label>
+                </div>
+                  <div class="input-field col s12">
+    <select>
+        
+      <option value="" disabled selected>Choose your option</option>
+    <i class="material-icons prefix">home</i>
+      <option value="1">Chelsea</option>
+      <option value="2">Manchester United</option>
+      <option value="3">Manchester City</option>
+      <option value="3">Real Madrid</option>
+      <option value="3">Real Madrid</option>
+      <option value="3">Real Madrid</option>
+    </select>
+    <label>Favorite Team</label>
+  </div>
+            </div>
+        </form>
+
+        
     </div>
+
+
+    
+
+<div class="parallax-container">
+    <div class="parallax">
+        <img class="imag" src="assets/images/soccer3.jpg">
+    </div>
+
+    
+</div>
+
+    <script type="text/javascript" src="test.js"></script>
+</div>
 
     <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -24,4 +105,5 @@
     <script src="assets/scripts/weather-service.js" type="text/javascript"></script>
     <script src="assets/scripts/scripts.js" type="text/javascript"></script>
 </body>
+
 </html>
