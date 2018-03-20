@@ -14,8 +14,8 @@ var weatherService = (function ($) {
             return promise;
         },
 
-        getFutureWeatherForArea: function (areaString, futureDate) {
-            
+        getForecastForArea: function (areaString, futureDate) {
+            //var url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
         }
     };
 })($);

@@ -1,4 +1,4 @@
-var mapObj = (function () {
+var mapService = (function ($) {
     'use strict';
 
     var key = "AIzaSyALBb2T9zVdON6ALjVFDElA4YZMl00BcOs";
@@ -17,12 +17,11 @@ var mapObj = (function () {
         getDirections: function (origin, destination) {
             var myRequestUrl = buildUrl(origin, destination);
             
-            var promise = $.ajax(myRequestUrl, function (response) {
-                console.log(myRequestUrl);
-                console.log(response);
+            var promise = $.ajax(myRequestUrl, function (directionsResponse) {
+                promise.resolve(response);
             });
 
             return promise;
         }
     };
-})();
+})($);
