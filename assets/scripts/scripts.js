@@ -21,13 +21,14 @@ $(document).ready(function () {
             // putting directions in a variable called directions for the sake of readability
             var directions = response.routes[0].legs[0].steps;
             
+            console.log(directions);
             // remove any current directions from the screen
-            $directionsWrapper.empty();
+            // $directionsWrapper.empty();
             
-            // loop through directions response and append to screen 
-            for (var i = 0; i < directions.length; i++) {
-                $directionsWrapper.append('<p>' + directions[i].html_instructions + '</p>');
-            }
+            // // loop through directions response and append to screen 
+            // for (var i = 0; i < directions.length; i++) {
+            //     $directionsWrapper.append('<p>' + directions[i].html_instructions + '</p>');
+            // }
         });
     });
     
