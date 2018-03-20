@@ -24,9 +24,16 @@ $(document).ready(function () {
     });
     
     function onSiteLoad() {
-        weatherService.getWeatherForArea('Richmond').then(function (weatherData) {
-            console.log(weatherData);
-        });    
+        weatherService.getCurrentWeatherForArea(23238).then(function (weatherData) {
+            // we have access to current weather data here...
+            //console.log(weatherData);
+        });  
+        
+        // takes a zip code
+        weatherService.getForecastForArea(23238).then(function (weatherData) {
+            console.log('Inside promise resolution.');
+            console.log(weatherData.list);
+        });
     }
 
     onSiteLoad();

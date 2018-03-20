@@ -3,19 +3,25 @@ var weatherService = (function ($) {
     var apiKey = "548b7d17e7be38efc5d1ae24fffbaeb8";
 
     return {
-        getWeatherForArea: function (areaString) {
+        getCurrentWeatherForArea: function (zipCode) {
             var url = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-                areaString + '&appid=' + apiKey;
+                zipCode + '&appid=' + apiKey;
 
             var promise = $.ajax(url, function (weatherData) {
-                console.log(weatherData);
+                promise.resolve(weatherData);
             });
 
             return promise;
         },
 
-        getForecastForArea: function (areaString, futureDate) {
-            //var url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
+        getForecastForArea: function (zipCode) {
+            var url = `http://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&appid=${apiKey}`;
+
+            var promise = $.ajax(url, function (weatherData) {
+                promise.resolve(weatherData);
+            });
+
+            return promise;
         }
     };
 })($);
