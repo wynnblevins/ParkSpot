@@ -9,8 +9,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     'use strict';
 
-    var $destinationTextBox = $('#destinationTextBox');
-    var $originTextBox = $('#originTextBox');
+    var $destinationTextBox = $('.destinationTextBox');
+    var $originTextBox = $('.originTextBox');
     var $directionsWrapper = $('#directionsWrapper'); 
 
     $('#directionsButton').click(function () {
