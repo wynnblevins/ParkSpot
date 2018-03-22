@@ -9,9 +9,16 @@ $(document).ready(function () {
 $(document).ready(function () {
     'use strict';
 
+<<<<<<< HEAD
+    var $destinationTextBox = $('.destinationTextBox');
+    var $originTextBox = $('.originTextBox');
+    var $directionsWrapper = $('#directionsWrapper'); 
+
+=======
     var $originTextBox = $('#icon_telephone1');
    // var $directionsWrapper = $('#directionsWrapper'); 
     
+>>>>>>> d8dd0881cf1dd4a96005cd696ba41d6912d7fb08
     $('#directionsButton').click(function () {
         var originText = $originTextBox.val();
         
