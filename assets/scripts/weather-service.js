@@ -4,8 +4,7 @@ var weatherService = (function ($) {
 
     return {
         getCurrentWeatherForArea: function (zipCode) {
-            var url = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-                zipCode + '&appid=' + apiKey;
+            var url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`;
 
             var promise = $.ajax(url, function (weatherData) {
                 promise.resolve(weatherData);

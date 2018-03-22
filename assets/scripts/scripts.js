@@ -36,7 +36,23 @@ $(document).ready(function () {
         // takes a zip code
         weatherService.getForecastForArea(23238).then(function (weatherData) {
             console.log('Inside promise resolution.');
-            console.log(weatherData.list);
+            console.log(weatherData);
+            var dayForecast = weatherData.list[0];
+            
+            // Get temperature and convert to Fahrenheit
+            var tempK = dayForecast.main.temp;
+            var tempF = Math.round(((tempK-273.15)*1.8+32));
+            console.log("Temp: " + tempF);
+            $('#temp-place').text(tempF + '\xB0' +'F');
+
+            // Get icon and convert it to an actual icon
+            var icon = dayForecast.weather[0].icon;
+            var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+            $('#weather-icon').attr('src', iconurl);
+
+            // Get wind information
+            var wind = dayForecast.wind.speed;
+            $('#wind-place').text("Wind: " + wind);
         });
     }
 
