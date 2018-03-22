@@ -9,20 +9,20 @@ $(document).ready(function () {
 $(document).ready(function () {
     'use strict';
 
+<<<<<<< HEAD
     var $destinationTextBox = $('.destinationTextBox');
     var $originTextBox = $('.originTextBox');
     var $directionsWrapper = $('#directionsWrapper'); 
 
+=======
+    var $originTextBox = $('#icon_telephone1');
+   // var $directionsWrapper = $('#directionsWrapper'); 
+    
+>>>>>>> d8dd0881cf1dd4a96005cd696ba41d6912d7fb08
     $('#directionsButton').click(function () {
-        var originText = $originTextBox[0].value;
-        var destinationText = $destinationTextBox[0].value;
+        var originText = $originTextBox.val();
         
-        mapService.getDirections(originText, destinationText).then(function (response) {
-            // putting directions in a variable called directions for the sake of readability
-            var directions = response.routes[0].legs[0].steps;
-            
-            console.log(directions);
-        });
+        window.location.href = "./parks.html?origin=" + originText;        
     });
 
     function initFirebase() {
