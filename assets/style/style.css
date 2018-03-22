@@ -5,8 +5,21 @@
 
 }
 
+#weather-icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+    height: 45px;
+    margin-top: 5px;
+}
+
+#wind-place {
+    margin-right: 20px;
+}
+
 .parallax-container {
     height: 800px;
+    width: 100%;
 }
 
 /*Wide card with share menu button*/
