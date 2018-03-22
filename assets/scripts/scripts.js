@@ -22,21 +22,23 @@ $(document).ready(function () {
             var directions = response.routes[0].legs[0].steps;
             
             console.log(directions);
-            // remove any current directions from the screen
-            // $directionsWrapper.empty();
-            
-            // // loop through directions response and append to screen 
-            // for (var i = 0; i < directions.length; i++) {
-            //     $directionsWrapper.append('<p>' + directions[i].html_instructions + '</p>');
-            // }
         });
     });
-    
+
+    function initFirebase() {
+        var config = {
+            apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
+            authDomain: "parkspot-1521304310258.firebaseapp.com",
+            databaseURL: "https://parkspot-1521304310258.firebaseio.com",
+            projectId: "parkspot-1521304310258",
+            storageBucket: "parkspot-1521304310258.appspot.com",
+            messagingSenderId: "887475150409"
+        };
+        firebase.initializeApp(config);
+    }
+
     function onSiteLoad() {
-        weatherService.getCurrentWeatherForArea(23238).then(function (weatherData) {
-            // we have access to current weather data here...
-            //console.log(weatherData);
-        });  
+        initFirebase();
         
         // takes a zip code
         weatherService.getForecastForArea(23238).then(function (weatherData) {
