@@ -2,7 +2,8 @@
     'use strict';
 
     $(document).ready(function () {
-        var url_string = window.location.href; //window.location.href
+        var $directionsContainer = $('#directionsContainer');
+        var url_string = window.location.href;
         var url = new URL(url_string);
         var origin = url.searchParams.get("origin");
         var destination = url.searchParams.get("destination");
@@ -12,7 +13,10 @@
             mapService.getDirections(origin, destination).then(function (response) {
                 // putting directions in a variable called directions for the sake of readability
                 var directions = response.routes[0].legs[0].steps;
-                console.log(directions);
+                
+                for (var i = 0; i < directions.length; i++) {
+                    $('<p>' + directions[i].html_instructions + '</p>').appendTo($directionsContainer);
+                }
             });
         }
 
