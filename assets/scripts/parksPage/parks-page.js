@@ -8,8 +8,6 @@
         parksService.search(10).then(function (response) {
             console.log(response);
         });
-
-        
     });
 
     $(document).on('click', 'a.btn', function myHandler() {

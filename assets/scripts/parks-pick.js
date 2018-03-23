@@ -36,6 +36,7 @@ $(document).on('click', '.button.pic10', function () {
 // }
 $("#testButton").click(function (){ 
     var originText = mapService.getDirections(url.searchParams.get("origin")); 
+    var destinationText = 
     console.log(originText); 
     window.location.href = "./parks.html?origin=" + originText + "&destination=" + destText;  
 
