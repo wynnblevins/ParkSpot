@@ -1,8 +1,5 @@
 .logo{
-    
     width: 90px;
-
-
 }
 
 #weather-icon {
@@ -54,3 +51,23 @@
    .middle .row {
        margin: 0 auto;
    }
+   
+#background-parks{
+    background: url('assets/images/stadium.jpg');
+    padding: 50px;
+}
+
+.card-right {
+    float: right;
+}
+
+.park-image{
+    width: 300px;
+    height: 450px;
+    text-align: center;
+}
+
+.park-name {
+    font-family: 'Alegreya', serif;
+    color: rgb(31, 26, 26)
+}
