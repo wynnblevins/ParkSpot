@@ -2,7 +2,7 @@
     'use strict';
 
     function updateDb($child) {
-        var parkName = $child.dataset.park;
+        var parkName = $child.dataset.park || '';
         var time = moment();
         console.log($child);
         
