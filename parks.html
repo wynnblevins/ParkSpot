@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-=======
->>>>>>> d8dd0881cf1dd4a96005cd696ba41d6912d7fb08
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <title>ParkSpot</title>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:700" rel="stylesheet">
+    <title>Available Parks</title>
 </head>
 
 <body>
@@ -35,101 +30,197 @@
             </ul>
         </div>
     </nav>
-    
-    <div class="parallax-container">
-        <div class="parallax">
-            <img class="imag" src="assets/images/grass.jpg">
-        </div>
-    </div>
-    <div class="section white">
-        <div class="row container">
-            <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">home</i>
-                <input id="icon_telephone" type="text" class="validate">
-                <label for="icon_telephone">Address</label>
-
-              
-
-
-            </div>
-        
-        
-            <button class="btn waves-effect center green" type="submit" id="directionsButton" name="action">Submit
-                <i class="material-icons right">check</i>
-            </button>
-        </div>
-
-    </div>
-
-
-
-    <div class="parallax-container">
-        <div class="parallax">
-            <img class="imag" src="assets/images/soccer3.jpg">
-        </div>
-    </div>
-    
-<footer class="page-footer black">
-    <div class="container">
+    <div class="background-parks">
         <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/bryanPark.jpg">
+                        <span class="card-title park-name">Bryan Park</span>
+                        </div>
+                    <div class="card-content">
+                        <span id="bryanParkDistance"></span>
+                        <span id="bryanParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">Get Directions</a>
+                    </div>
+                </div>
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 4</a>
-                    </li>
-                </ul>
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/byrdPark.jpg">
+                        <span class="card-title park-name">Byrd Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="byrdParkDistance"></span>
+                        <span id="byrdParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Canoe-Run-Park.jpg">
+                        <span class="card-title park-name">Canoe Run Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="canoeRunParkDistance"></span>
+                        <span id="canoeRunParkCheckedIn"></span>
+                    </div>
+                <div class="card-action">
+                    <a href="#">Get Directions</a>
+                </div>
+                </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Chimborazo2.jpg">
+                        <span class="card-title park-name">Chimborazo</span>
+                    </div>
+                <div class="card-content">
+                    <span id="chimborazoParkDistance"></span>
+                    <span id="chimborazoParkCheckedIn"></span>
+                </div>
+                <div class="card-action">
+                    <a href="#">Get Directions</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Deep-Run-Park.jpg">
+                        <span class="card-title park-name">Deep Run Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="deepRunParkDistance"></span>
+                        <span id="deepRunParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Dorey-Park.jpg">
+                        <span class="card-title park-name">Dorey Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="doreyParkDistance"></span>
+                        <span id="doreyParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Huguenot.jpg">
+                        <span class="card-title park-name">Huguenot Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="huguenotDistance"></span>
+                        <span id="huguenotCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Rockwood.jpg">
+                        <span class="card-title park-name">Rockwood Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="rockwoodParkDistance"></span>
+                        <span id="rockwoodParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Stratton.jpg">
+                        <span class="card-title park-name">Mary B. Stratton Sports Field Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="strattonParkDistance"></span>
+                        <span id="strattonParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="park-image" src="assets/images/parks/Twin-Hickory.jpg">
+                        <span class="card-title park-name">Twin-Hickory Park</span>
+                    </div>
+                    <div class="card-content">
+                        <span id="twinHickoryParkDistance"></span>
+                        <span id="twinHickoryParkCheckedIn"></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Get Directions</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Copyright Text
+            2018 K2W2
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>
 </footer>
     
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
-    <script src="assets/scripts/google-maps-service.js" type="text/javascript"></script>
-    <script src="assets/scripts/weather-service.js" type="text/javascript"></script>
-    <script src="assets/scripts/scripts.js" type="text/javascript"></script>
-</body>
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <title>Parks</title>
-</head>
-<body>
-    <h1>Parks Page Here...</h1>
+<script src="assets/scripts/google-maps-service.js" type="text/javascript"></script>
+<script src="assets/scripts/weather-service.js" type="text/javascript"></script>
+<script src="assets/scripts/scripts.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC-fYvMH1_u6Z5TNvRgsBFAF3jTTL2XZE&libraries=places"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC-fYvMH1_u6Z5TNvRgsBFAF3jTTL2XZE&libraries=places"></script>
     <script type="text/javascript" src="assets/scripts/parks-service.js"></script>
     <script type="text/javascript" src="assets/scripts/parksPage/parks-page.js"></script>
 </body>

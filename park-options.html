@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <title>Park Options</title>
 </head>
 <body>
     <nav>
         <div class="nav-wrapper black">
-            <a href="#" class="brand-logo center"> <img class="logo" src="assets/images/Logo.png" alt=""> </a>
+            <a href="#" class="brand-logo center"> <img class="logo" src="assets/images/Logo.png" alt=""></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li>
                     <a href="sass.html">Sass</a>
@@ -42,25 +48,191 @@
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
+              <img src="assets/images/parks/bryanPark.jpg">
+              <span class="card-title">Bryan Park</span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <span id="bryanParkDistance"></span>
+              <span id="bryanParkCheckedIn"></span>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Get Directions</a>
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
-    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/byrdPark.jpg">
+                <span class="card-title">Byrd Park</span>
+              </div>
+              <div class="card-content">
+                <span id="byrdParkDistance"></span>
+                <span id="byrdParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Canoe-Run-Park.jpg">
+                <span class="card-title">Canoe Run Park</span>
+              </div>
+              <div class="card-content">
+                <span id="canoeRunParkDistance"></span>
+                <span id="canoeRunParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Chimborazo2.jpg">
+                <span class="card-title">Chimborazo</span>
+              </div>
+              <div class="card-content">
+                <span id="chimborazoParkDistance"></span>
+                <span id="chimborazoParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row"></div>
+    <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/parks/Deep-Run-Park.jpg">
+            <span class="card-title">Deep Run Park</span>
+          </div>
+          <div class="card-content">
+            <span id="deepRunParkDistance"></span>
+            <span id="deepRunParkCheckedIn"></span>
+          </div>
+          <div class="card-action">
+            <a href="#">Get Directions</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Dorey-Park.jpg">
+                <span class="card-title">Dorey Park</span>
+              </div>
+              <div class="card-content">
+                <span id="doreyParkDistance"></span>
+                <span id="doreyParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+<div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Huguenot.jpg">
+                <span class="card-title">Huguenot Park</span>
+              </div>
+              <div class="card-content">
+                <span id="huguenotDistance"></span>
+                <span id="huguenotCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+<div class="row"></div>
+    <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/parks/Rockwood.jpg">
+            <span class="card-title">Rockwood Park</span>
+          </div>
+          <div class="card-content">
+            <span id="rockwoodParkDistance"></span>
+            <span id="rockwoodParkCheckedIn"></span>
+          </div>
+          <div class="card-action">
+            <a href="#">Get Directions</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Stratton.jpg">
+                <span class="card-title">Mary B. Stratton Sports Field Park</span>
+              </div>
+              <div class="card-content">
+                <span id="strattonParkDistance"></span>
+                <span id="strattonParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+
+<div class="row"></div>
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/parks/Twin-Hickory.jpg">
+                <span class="card-title">Twin-Hickory Parkk</span>
+              </div>
+              <div class="card-content">
+                <span id="twinHickoryParkDistance"></span>
+                <span id="twinHickoryParkCheckedIn"></span>
+              </div>
+              <div class="card-action">
+                <a href="#">Get Directions</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+ 
     <script src="assets/scripts/google-maps-service.js" type="text/javascript"></script>
     <script src="assets/scripts/weather-service.js" type="text/javascript"></script>
     <script src="assets/scripts/scripts.js" type="text/javascript"></script>
