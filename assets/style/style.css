@@ -41,3 +41,16 @@
 .imag{
     width: 1000px;
 }
+
+.middle {
+       display: flex;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 100%;
+       width: 100%;
+   }
+
+   .middle .row {
+       margin: 0 auto;
+   }
