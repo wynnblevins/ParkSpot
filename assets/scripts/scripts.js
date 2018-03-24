@@ -47,7 +47,7 @@ $(document).ready(function () {
 
             // Get wind information
             var wind = dayForecast.wind.speed;
-            $('#wind-place').text("Wind: " + wind);
+            $('#wind-place').text("Wind: " + wind + " knots");
         });
     }
 
