@@ -39,6 +39,19 @@
     width: 1000px;
 }
 
+.middle {
+       display: flex;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 100%;
+       width: 100%;
+   }
+
+   .middle .row {
+       margin: 0 auto;
+   }
+   
 #background-parks{
     background: url('../images/stadium.jpg') center / cover;
     padding: 50px;
@@ -61,6 +74,10 @@
 
 .park-name {
     font-family: 'Alegreya', serif;
+<<<<<<< HEAD
+    color: rgb(31, 26, 26)
+}
+=======
     color: rgb(49, 43, 43);
     font-weight: bold;
 }
@@ -68,3 +85,4 @@
 .center{
     text-align: center;
 }
+>>>>>>> 82a41692b3636412cd1c6f4886c1c167a983f73e
