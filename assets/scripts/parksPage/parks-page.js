@@ -34,12 +34,13 @@
         console.log($child);
         
         firebase.database().ref('parks/' + parkName).set({
-            timeStamp: time
+            timeStamp: time,
+            available: false
         });
     }
 
-    function parkAvailable(park) {
-        var buffer = 2 * 60 * 1000;
+    var parkAvailable = function (park) {
+        var buffer = 30 * 1000;
         var sum = park.timeStamp + buffer;
         var currentTime = getCurrentTime();
         
@@ -93,10 +94,17 @@
 
     // every ten seconds, check park availability
     setInterval(function () {
+        var parkIsAvailable = null;
+        
         for (var park in parks) {
-            // for each park check if clicked button
-            if (parkAvailable(parks[park])) {
-                   
+            parkIsAvailable = parkAvailable(parks[park]);
+            
+            if (parkIsAvailable) {
+                // make sure park is flagged as not in use
+                firebase.database().ref('parks/' + park).set({
+                    timeStamp: 0,
+                    available: true
+                });                    
             } 
         }
     }, 10 * 1000);
