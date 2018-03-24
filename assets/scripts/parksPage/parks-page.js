@@ -16,6 +16,8 @@
 
         var directionsHtml = "directions.html?";
         var destinationParam = '&destination=' + $(this).data('address');
+        var parkParam = '&parkName=' + $(this).data('park');
+        console.log(parkParam);
         
         locationReverse.splice(0, locationReverse.indexOf('/'));
         console.log(locationReverse.reverse().join(""));
@@ -40,7 +42,7 @@
     }
 
     var parkAvailable = function (park) {
-        var buffer = 30 * 1000;
+        var buffer = 45 * 1000;
         var sum = park.timeStamp + buffer;
         var currentTime = getCurrentTime();
         
@@ -50,14 +52,6 @@
         }
 
         return false;
-    }
-
-    function flipButtonIcon($clickedElement) {
-        if ($clickedElement[0].firstElementChild.firstChild.textContent === 'done') {
-            $clickedElement[0].firstElementChild.firstChild.textContent = 'clear';
-        } else if ($clickedElement[0].firstElementChild.firstChild.textContent === 'clear') {
-            $clickedElement[0].firstElementChild.firstChild.textContent = 'done';
-        }
     }
 
     function loadParks() {
@@ -87,7 +81,6 @@
         $child.off();
 
         parkClickHandler($child, $clickedElement);
-        flipButtonIcon($clickedElement);
 
         $child.click(handler);
     });
@@ -104,7 +97,9 @@
                 firebase.database().ref('parks/' + park).set({
                     timeStamp: 0,
                     available: true
-                });                    
+                });
+            } else {
+                console.log(park + ' is not available...');
             } 
         }
     }, 10 * 1000);
