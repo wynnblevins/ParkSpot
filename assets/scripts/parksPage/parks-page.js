@@ -5,6 +5,28 @@
     var parks = null;
     var $clickedElement = null;
 
+    $('.directionsButton').click(function (e) {
+        e.preventDefault();
+        console.log(window.location.href);
+        var currentLocation = window.location.href; 
+        var locationReverse = currentLocation.split("").reverse();
+        var origin = locationReverse.splice(0, locationReverse.indexOf('?')).reverse().join("");
+        console.log(origin);
+        console.log($(this).data('address'));
+
+        var directionsHtml = "directions.html?";
+        var destinationParam = '&destination=' + $(this).data('address');
+        
+        locationReverse.splice(0, locationReverse.indexOf('/'));
+        console.log(locationReverse.reverse().join(""));
+        var newURL = locationReverse.join("");
+        // var page = pageReversed.reverse();
+        // var pageStr = page.join("");
+        // var baseUrl = urlPieces.reverse().join("");
+        
+        window.location.href = newURL + directionsHtml + origin + destinationParam;
+    });
+    
     function getCurrentTime() {
         return moment().valueOf();    
     }
@@ -53,7 +75,11 @@
     }
     
     $(document).ready(function () {
+        // get origin value from url
+        var origin = url.searchParams.get("origin");
+        
         loadParks();
+        
     });
 
     $(document).on('click', 'a.btn', function handler() {
