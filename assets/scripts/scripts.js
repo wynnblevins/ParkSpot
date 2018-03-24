@@ -13,12 +13,6 @@ $(document).ready(function () {
     var $originTextBox = $('#icon_telephone1');
     var $directionsWrapper = $('#directionsWrapper'); 
 
-    $('#directionsButton').click(function () {
-        var originText = $originTextBox.val();
-        
-        window.location.href = "./parks.html?origin=" + originText;        
-    });
-
     function initFirebase() {
         var config = {
             apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
