@@ -34,7 +34,7 @@ var url = new URL(window.location);
 // function addDest(address) {
 
 // }
-$("#bryanPic").click(function (){ 
+$("#bryanPic").on('click', function() { 
     var originText = mapService.getDirections(url.searchParams.get("origin")); 
     var destinationText = $("#bryanPic").data('address');
     console.log(originText); 
