@@ -13,6 +13,21 @@ $(document).ready(function () {
     var $originTextBox = $('#icon_telephone1');
     var $directionsWrapper = $('#directionsWrapper'); 
 
+    $('button#white-font').click(function () {
+        console.log($('#icon_telephone1'));
+        var test = $('#icon_telephone1').val();
+        console.log(test);
+        
+        var parksHtml = "parks.html?origin=";
+        var reversedUrl = window.location.href.split("").reverse().join(""); 
+        var urlPieces = reversedUrl.split("");
+        var pageReversed = urlPieces.splice(0, urlPieces.indexOf('/'));
+        var page = pageReversed.reverse();
+        var pageStr = page.join("");
+        var baseUrl = urlPieces.reverse().join("");
+        window.location.href = baseUrl + parksHtml + $('#icon_telephone1').val(); 
+    });
+
     function initFirebase() {
         var config = {
             apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
