@@ -82,10 +82,10 @@
     text-align: center;
 }
 
-<<<<<<< HEAD
 #white-font {
     color:white;
-=======
+}
+
 #weather-icon {
     margin-right: 20px;
     margin-left: 20px;
@@ -93,7 +93,7 @@
     height: 45px;
     margin-top: 5px;
 }
+
 #wind-place {
     margin-right: 20px;
->>>>>>> d7d93d09531824c715c864fc64600bcfd777bb26
 }

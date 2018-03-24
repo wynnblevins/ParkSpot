@@ -13,6 +13,22 @@ $(document).ready(function () {
     var $originTextBox = $('#icon_telephone1');
     var $directionsWrapper = $('#directionsWrapper'); 
 
+    $('button#white-font').click(function () {
+        console.log($('#icon_telephone1'));
+        var test = $('#icon_telephone1').val();
+        console.log(test);
+        
+        var parksHtml = "parks.html?origin=";
+        var reversedUrl = window.location.href.split("").reverse().join(""); 
+        var urlPieces = reversedUrl.split("");
+        var pageReversed = urlPieces.splice(0, urlPieces.indexOf('/'));
+        var page = pageReversed.reverse();
+        var pageStr = page.join("");
+        var baseUrl = urlPieces.reverse().join("");
+        var path = baseUrl + parksHtml + test;
+        window.location.href = path;  
+    });
+
     function initFirebase() {
         var config = {
             apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
@@ -47,7 +63,7 @@ $(document).ready(function () {
 
             // Get wind information
             var wind = dayForecast.wind.speed;
-            $('#wind-place').text("Wind: " + wind);
+            $('#wind-place').text("Wind: " + wind + " knots");
         });
     }
 
