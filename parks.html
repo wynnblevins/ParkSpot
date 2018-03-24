@@ -91,13 +91,20 @@
                         <img class="park-image" src="assets/images/parks/Chimborazo2.jpg">
                         <span class="card-title park-name">Chimborazo</span>
                     </div>
-                <div class="card-content">
-                    <span id="chimborazoParkDistance"></span>
-                    <span id="chimborazoParkCheckedIn"></span>
-                </div>
-                <div class="card-action park-name">
-                    <a href="directions.html" id="chimborazoPic" data-address="3215 E Broad St, Richmond, VA 23223"  class= "grey-text text-darken-2 card-font">Get Directions</a>
-                </div>
+
+                    <div class="card-content">
+                        <span id="chimborazoParkDistance"></span>
+                        <span id="chimborazoParkCheckedIn">
+                            <a class="btn" data-park="chimborazo">
+                                <i class="material-icons left">done</i>
+                                Check In
+                            </a>
+                        </span>
+                    </div>
+                    <div class="card-action park-name">
+                        <a href="directions.html" id="chimborazoPic" data-address="3215 E Broad St, Richmond, VA 23223"  class= "grey-text text-darken-2 card-font">Get Directions</a>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,11 +261,12 @@
             </div>
         </div>
         <div class="footer-copyright black">
-            <div class="container card-font center">
-            <h5>ParkSpot 2018</h5>
-            </div>
+          <div class="container card-font center">
+          <h5>ParkSpot 2018</h5>
+          </div>
         </div>
     </footer>
+
     
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>

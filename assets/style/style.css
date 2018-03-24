@@ -39,6 +39,19 @@
     width: 1000px;
 }
 
+.middle {
+       display: flex;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 100%;
+       width: 100%;
+   }
+
+   .middle .row {
+       margin: 0 auto;
+   }
+   
 #background-parks{
     background: url('../images/stadium.jpg') center / cover;
     padding: 50px;
@@ -69,6 +82,18 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
 #white-font {
     color:white;
+=======
+#weather-icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+    height: 45px;
+    margin-top: 5px;
+}
+#wind-place {
+    margin-right: 20px;
+>>>>>>> d7d93d09531824c715c864fc64600bcfd777bb26
 }
