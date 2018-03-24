@@ -53,7 +53,11 @@
     }
     
     $(document).ready(function () {
+        // get origin value from url
+        var origin = url.searchParams.get("origin");
+        
         loadParks();
+        
     });
 
     $(document).on('click', 'a.btn', function handler() {
