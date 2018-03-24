@@ -82,6 +82,13 @@
     text-align: center;
 }
 
+
+.direction{
+    font-family: 'Playfair Display',
+    serif;
+    
+}
+
 #white-font {
     color:white;
 }
