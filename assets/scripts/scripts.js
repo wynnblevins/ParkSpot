@@ -25,7 +25,8 @@ $(document).ready(function () {
         var page = pageReversed.reverse();
         var pageStr = page.join("");
         var baseUrl = urlPieces.reverse().join("");
-        window.location.href = baseUrl + parksHtml + $('#icon_telephone1').val(); 
+        var path = baseUrl + parksHtml + test;
+        window.location.href = path;  
     });
 
     function initFirebase() {
