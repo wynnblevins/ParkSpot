@@ -82,8 +82,25 @@
     text-align: center;
 }
 
+
 .direction{
     font-family: 'Playfair Display',
     serif;
     
+}
+
+#white-font {
+    color:white;
+}
+
+#weather-icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+    height: 45px;
+    margin-top: 5px;
+}
+
+#wind-place {
+    margin-right: 20px;
 }
