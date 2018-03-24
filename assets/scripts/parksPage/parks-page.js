@@ -20,9 +20,6 @@
         locationReverse.splice(0, locationReverse.indexOf('/'));
         console.log(locationReverse.reverse().join(""));
         var newURL = locationReverse.join("");
-        // var page = pageReversed.reverse();
-        // var pageStr = page.join("");
-        // var baseUrl = urlPieces.reverse().join("");
         
         window.location.href = newURL + directionsHtml + origin + destinationParam;
     });
