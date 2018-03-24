@@ -74,10 +74,6 @@
 
 .park-name {
     font-family: 'Alegreya', serif;
-<<<<<<< HEAD
-    color: rgb(31, 26, 26)
-}
-=======
     color: rgb(49, 43, 43);
     font-weight: bold;
 }
@@ -85,4 +81,14 @@
 .center{
     text-align: center;
 }
->>>>>>> 82a41692b3636412cd1c6f4886c1c167a983f73e
+
+#weather-icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+    height: 45px;
+    margin-top: 5px;
+}
+#wind-place {
+    margin-right: 20px;
+}
