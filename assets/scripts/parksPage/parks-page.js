@@ -50,6 +50,7 @@
         // get existing parks reservations in firebase
         firebase.database().ref('parks/').once('value').then(function (snapshot) {
             parks = snapshot.val();
+            console.log(parks);
         });
     }
 
