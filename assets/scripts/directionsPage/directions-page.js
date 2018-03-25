@@ -1,17 +1,7 @@
-(function (mapService) {
+(function (mapService, currentTimeService, timersFactory, firebase) {
     'use strict';
-
-    function initFirebase() {
-        var config = {
-            apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
-            authDomain: "parkspot-1521304310258.firebaseapp.com",
-            databaseURL: "https://parkspot-1521304310258.firebaseio.com",
-            projectId: "parkspot-1521304310258",
-            storageBucket: "parkspot-1521304310258.appspot.com",
-            messagingSenderId: "887475150409"
-        };
-        firebase.initializeApp(config);
-    }
+    
+    var currentTimeouts = [];
 
     $(document).ready(function () {
         var $directionsContainer = $('#directionsContainer');
@@ -20,7 +10,7 @@
         var origin = url.searchParams.get("origin");
         var destination = url.searchParams.get("destination");
         var parkName = url.searchParams.get('parkName');
-
+        
         function init() {
             // pass a value for a radius around richmond to search for parks, in this case 10 miles
             mapService.getDirections(origin, destination).then(function (response) {
@@ -34,10 +24,28 @@
         }
 
         init();
-        initFirebase();
     });
 
     $(document).on('click', 'a.btn', function () {
-        $(this).data('')
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var parkName = url.searchParams.get('parkName');
+        var oneHour = 10000; // 3600 seconds in one hour
+
+        // set the value of the park reservation 
+        firebase.database().ref('parks/' + parkName).set({
+            timeStamp: currentTimeService.getCurrentTime(),
+            available: false 
+        });
+        
+        // after timer expires, make park reservation spot 
+        timersFactory.createTimer(oneHour, function () {
+            firebase.database().ref('parks/' + parkName).set({
+                timeStamp: 0,
+                available: true    
+            });    
+        });        
+        
+        
     });
-})(mapService);
+})(mapService, currentTimeService, timersFactory, firebase);

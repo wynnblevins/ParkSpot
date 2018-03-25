@@ -12,22 +12,41 @@ $(document).ready(function () {
     var $destinationTextBox = $('#destinationTextBox');
     var $originTextBox = $('#icon_telephone1');
     var $directionsWrapper = $('#directionsWrapper'); 
+    var oneHour = 60 * 1000 * 5;
 
     $('button#white-font').click(function () {
         console.log($('#icon_telephone1'));
-        var test = $('#icon_telephone1').val();
-        console.log(test);
-        
-        var parksHtml = "parks.html?origin=";
+        var origin = $('#icon_telephone1').val();
+        var name = $('#icon_prefix').val(); 
+
+        var parksHtml = "parks.html?origin=" + origin;
         var reversedUrl = window.location.href.split("").reverse().join(""); 
         var urlPieces = reversedUrl.split("");
         var pageReversed = urlPieces.splice(0, urlPieces.indexOf('/'));
         var page = pageReversed.reverse();
         var pageStr = page.join("");
         var baseUrl = urlPieces.reverse().join("");
-        var path = baseUrl + parksHtml + test;
+        
+        var nameParam = '&name=' + name;
+        var path = baseUrl + parksHtml + nameParam;
+        
+        console.log(path);
+        
         window.location.href = path;  
     });
+
+    function getRecord(recordName) {
+        return firebase.database().ref('parks/' + recordName).once('value');
+    }
+
+    function getRemainingTimeInHourForRecord(recordVal, recordName) {
+        var dbRecord = null;
+        var currentTime = currentTimeService.getCurrentTime();
+        var elapsedTime = currentTime - recordVal.timeStamp;
+        var remainingTime = (5 * 60 * 1000) - elapsedTime;
+        return remainingTime; 
+        
+    }
 
     function initFirebase() {
         var config = {
@@ -39,6 +58,40 @@ $(document).ready(function () {
             messagingSenderId: "887475150409"
         };
         firebase.initializeApp(config);
+
+        // get rid of stale park reservations (if any)
+        dataFreshener();
+    }
+
+    // runs on app load to make sure data isnt "stale"
+    function dataFreshener() {
+        firebase.database().ref('parks/').once('value').then(function (snapshot) {
+            var parks = snapshot.val();
+            var currTime = currentTimeService.getCurrentTime();
+            // loop through all parks
+            for (var park in parks) {
+                console.log(parks);
+                // if data is stale aka more than an hour old
+                if ((parks[park].timeStamp + oneHour) <= currTime) {
+                    // reset our record
+                    firebase.database().ref('parks/' + park).set({
+                        timeStamp: 0,
+                        available: true    
+                    });                    
+                } else {
+                    var remainingTime = getRemainingTimeInHourForRecord(parks[park], park);
+                    
+                    // restart our timer with however much time is left in the hour reservation
+                    timersFactory.createTimer(remainingTime, 
+                        function () {
+                        firebase.database().ref('parks/' + park).set({
+                            timeStamp: remainingTime,
+                            available: false    
+                        });    
+                    });
+                }
+            }
+        });
     }
 
     function onSiteLoad() {
