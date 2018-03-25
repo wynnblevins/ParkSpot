@@ -30,7 +30,7 @@
         var url_string = window.location.href;
         var url = new URL(url_string);
         var parkName = url.searchParams.get('parkName');
-        var oneHour = 10000; // 3600 seconds in one hour
+        var oneHour = 3600 * 1000; // 3600 seconds converted to milliseconds (3600 seconds == 1 hour)
 
         // set the value of the park reservation 
         firebase.database().ref('parks/' + parkName).set({
@@ -45,7 +45,5 @@
                 available: true    
             });    
         });        
-        
-        
     });
 })(mapService, currentTimeService, timersFactory, firebase);
