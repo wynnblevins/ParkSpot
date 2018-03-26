@@ -50,8 +50,14 @@
         // get existing parks reservations in firebase
         firebase.database().ref('parks/').once('value').then(function (snapshot) {
             parks = snapshot.val();
-            console.log(parks);
-        });
+            for (var park in parks) {
+                var currentPark = parks[park];
+                if (!currentPark.available) {
+                    $('div.card-action.park-name.' + park)
+                        .append('<img class="right" src="assets/images/reserved-resized.png" alt="reserved"/>');
+                }
+            }
+        }); 
     }
 
     function parkClickHandler($child, $clickedElement) {    

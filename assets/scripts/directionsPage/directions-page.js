@@ -46,6 +46,8 @@
                 timeStamp: 0,
                 available: true    
             });    
-        }, oneHour);        
+        }, oneHour);     
+        
+        location.replace(document.referrer);
     });
 })(mapService, currentTimeService, timersFactory, firebase);
