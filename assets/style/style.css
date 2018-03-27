@@ -62,8 +62,6 @@
 }
 
 .park-image{
-    width: 300px;
-    height: 450px;
     text-align: center;
 }
 
@@ -82,13 +80,11 @@
     text-align: center;
 }
 
-<<<<<<< HEAD
 .direction{
     font-family: 'Playfair Display',
     serif;
     
 }
-=======
 #white-font {
     color:white;
 }
@@ -104,4 +100,3 @@
 #wind-place {
     margin-right: 20px;
 }
->>>>>>> 494ce9d2bbc4f4b4e8ceb29af4b62b2f685b7f5e

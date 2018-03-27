@@ -18,17 +18,18 @@
     <nav>
         <div class="nav-wrapper black">
             <a href="#" class="brand-logo center"> <img class="logo" src="assets/images/Logo.png" alt=""> </a>
+            <ul>
+                <li class="left" id="temp-place">
+                </li>
+                <li class="left">
+                    <img id="weather-icon" src="" alt="Weather icon">
+                </li>
+                <li class="right" id="wind-place">
+                </li>                   
+            </ul>
+            
+        
         </div>
-
-        <ul class="right hide-on-med-and-down">
-            <li id="temp-place">
-            </li>
-            <li>
-                <img id="weather-icon" src="" alt="Weather icon">
-            </li>
-            <li id="wind-place">
-            </li>                   
-        </ul>
     </nav>
 
     <div class="parallax-container">
@@ -38,6 +39,10 @@
     </div>
     <div class="section white">
         <div class="row container">
+            <div class= "col 12">
+                <p>To see which parks are free, enter your first name, your current location ( street, city, state, zip), 
+                    and click "Local Parks." To get directions on the next page, simply choose your preferred park.</p>
+            </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="icon_prefix" type="text" class="validate">
@@ -90,7 +95,11 @@
     <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <script src="assets/scripts/current-time-service.js" type="text/javascript"></script>
+    <script src="assets/scripts/timers-factory.js" type="text/javascript"></script>
     <script src="assets/scripts/google-maps-service.js" type="text/javascript"></script>
     <script src="assets/scripts/weather-service.js" type="text/javascript"></script>
     <script src="assets/scripts/scripts.js" type="text/javascript"></script>
