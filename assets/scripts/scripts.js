@@ -9,6 +9,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     'use strict';
 
+    // Get the origin and the name from the index.html file
     var $destinationTextBox = $('#destinationTextBox');
     var $originTextBox = $('#icon_telephone1');
     var $directionsWrapper = $('#directionsWrapper'); 
@@ -19,6 +20,7 @@ $(document).ready(function () {
         var origin = $('#icon_telephone1').val();
         var name = $('#icon_prefix').val(); 
 
+        // Remove index.html from the URL and add origin and name
         var parksHtml = "parks.html?origin=" + origin;
         var reversedUrl = window.location.href.split("").reverse().join(""); 
         var urlPieces = reversedUrl.split("");
@@ -32,6 +34,7 @@ $(document).ready(function () {
         
         console.log(path);
         
+        // New URL with parks.html and origin and name
         window.location.href = path;  
     });
 
@@ -39,6 +42,7 @@ $(document).ready(function () {
         return firebase.database().ref('parks/' + recordName).once('value');
     }
 
+    // Function to get remaining time in the hour for a check-in
     function getRemainingTimeInHourForRecord(recordVal, recordName) {
         var dbRecord = null;
         var currentTime = currentTimeService.getCurrentTime();
@@ -48,6 +52,7 @@ $(document).ready(function () {
         
     }
 
+    // Firebase config information
     function initFirebase() {
         var config = {
             apiKey: "AIzaSyCMPdLIcBLfUwyI7Gtk-iWVlk-nv4TcbDI",
@@ -63,7 +68,7 @@ $(document).ready(function () {
         dataFreshener();
     }
 
-    // runs on app load to make sure data isnt "stale"
+    // Function runs on app load to make sure data isnt "stale"
     function dataFreshener() {
         firebase.database().ref('parks/').once('value').then(function (snapshot) {
             var parks = snapshot.val();
@@ -97,7 +102,7 @@ $(document).ready(function () {
     function onSiteLoad() {
         initFirebase();
         
-        // takes a zip code
+        // Weather API takes a zip code
         weatherService.getForecastForArea(23238).then(function (weatherData) {
             console.log('Inside promise resolution.');
             console.log(weatherData);
