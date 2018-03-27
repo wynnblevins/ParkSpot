@@ -30,22 +30,24 @@
         var url_string = window.location.href;
         var url = new URL(url_string);
         var parkName = url.searchParams.get('parkName');
-        var oneHour = 10000; // 3600 seconds in one hour
+        var oneHour = 3600 * 1000; // 3600 seconds converted to milliseconds (3600 seconds == 1 hour)
+
+        console.log('inside click handler');
 
         // set the value of the park reservation 
         firebase.database().ref('parks/' + parkName).set({
             timeStamp: currentTimeService.getCurrentTime(),
             available: false 
         });
-        
+
         // after timer expires, make park reservation spot 
-        timersFactory.createTimer(oneHour, function () {
+        timersFactory.createTimer(function () {
             firebase.database().ref('parks/' + parkName).set({
                 timeStamp: 0,
                 available: true    
             });    
-        });        
+        }, oneHour);     
         
-        
+        location.replace(document.referrer);
     });
 })(mapService, currentTimeService, timersFactory, firebase);
