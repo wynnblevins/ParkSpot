@@ -1,3 +1,4 @@
+// Function to determine if a park is available because an hour has passed
 var recordCheckerService = (function () {
     'use strict';
     return {

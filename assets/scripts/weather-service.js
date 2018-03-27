@@ -1,3 +1,4 @@
+// Function to call the weather API and return weather information
 var weatherService = (function ($) {
     'use strict';
     var apiKey = "548b7d17e7be38efc5d1ae24fffbaeb8";
