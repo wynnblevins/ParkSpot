@@ -66,8 +66,6 @@
 }
 
 .park-image{
-    width: 300px;
-    height: 450px;
     text-align: center;
 }
 
@@ -86,13 +84,11 @@
     text-align: center;
 }
 
-
 .direction{
     font-family: 'Playfair Display',
     serif;
     
 }
-
 #white-font {
     color:white;
 }
