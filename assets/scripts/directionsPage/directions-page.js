@@ -1,8 +1,10 @@
+// Function to get directions from the Google Directions API
 (function (mapService, currentTimeService, timersFactory, firebase) {
     'use strict';
     
     var currentTimeouts = [];
 
+    // Get the park name, origin and destination from the url
     $(document).ready(function () {
         var $directionsContainer = $('#directionsContainer');
         var url_string = window.location.href;
@@ -26,6 +28,7 @@
         init();
     });
 
+    // Click handler to set up a time stamp for the park when it is clicked
     $(document).on('click', 'a.btn', function () {
         var url_string = window.location.href;
         var url = new URL(url_string);
@@ -50,4 +53,5 @@
         
         location.replace(document.referrer);
     });
+
 })(mapService, currentTimeService, timersFactory, firebase);

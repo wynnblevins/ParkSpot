@@ -1,3 +1,4 @@
+// Function to get the parks around Richmond and the addresses
 var parksService = (function () {
     'use strict';
 

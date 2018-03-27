@@ -1,3 +1,4 @@
+// Timers for the 1 hour check-in
 var timersFactory = (function (currentTimeService) {
     'use strict'; 
 
